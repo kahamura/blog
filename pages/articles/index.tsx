@@ -26,7 +26,7 @@ const Articles: React.FC<Props> = ({ allArticlesData }) => (
           {tags?.map((tag, i) => (
             <span
               key={i}
-              className="text-rose-300 text-xs outline outline-1 rounded-sm px-6 py-0.5 mr-3"
+              className="dark:text-rose-300 outline outline-1 outline-rose-300 text-xs rounded-sm px-5 py-0.5 mr-3"
             >
               {tag}
             </span>
