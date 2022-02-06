@@ -1,0 +1,29 @@
+import Link from "next/link";
+import Head from "next/head";
+import { ChangeThemeButton } from "../components/ChangeThemeButton";
+
+const Layout: React.FC = ({ children }) => {
+  return (
+    <div className="dark:bg-slate-800 bg-white min-h-screen bg-auto">
+      <div className="max-w-xl mx-auto px-4 py-6 sm:py-10 prose dark:prose-invert">
+        <Head>
+          <title>aki blog</title>
+          <link rel="icon" type="image/png" href="/favicon.svg" />
+        </Head>
+        <header>
+          <div className="flex justify-between mb-12">
+            <Link href="/">
+              <a className="text-rose-300 text-4xl font-bold no-underline">
+                aki blog
+              </a>
+            </Link>
+            <ChangeThemeButton />
+          </div>
+        </header>
+        <main>{children}</main>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;

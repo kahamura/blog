@@ -1,8 +1,17 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import Layout from "../components/layout";
+import { AppProps } from "next/app";
+import { ThemeProvider } from "next-themes";
+import "../styles/globals.css";
+import "highlight.js/styles/night-owl.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ThemeProvider attribute="class">
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 
-export default MyApp
+export default App;
