@@ -34,7 +34,9 @@ const Article: React.FC<Props> = ({ articleData }) => {
         <title>{articleData.title}</title>
       </Head>
       <div className="text-4xl font-bold mb-3">{articleData.title}</div>
-      <Date dateString={articleData.date} />
+      <div className="pb-10">
+        <Date dateString={articleData.date} />
+      </div>
       <div
         dangerouslySetInnerHTML={{ __html: articleData.contentHtml ?? "" }}
       />

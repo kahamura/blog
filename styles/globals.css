@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 pre {
-  border-radius: 16px !important;
+  border-radius: 14px !important;
   background: #011627 !important;
-}
-code {
-  border-radius: 16px !important;
 }

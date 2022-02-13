@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { MoonIcon } from "@heroicons/react/solid";
 import { RiSunFill } from "react-icons/ri";
 
-export const ChangeThemeButton: React.FC = () => {
+const ToggleDark: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -30,3 +30,5 @@ export const ChangeThemeButton: React.FC = () => {
     </>
   );
 };
+
+export default ToggleDark;
