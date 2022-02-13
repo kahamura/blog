@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import { ChangeThemeButton } from "../components/ChangeThemeButton";
+import ToggleDark from "./toggleDark";
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -17,7 +17,7 @@ const Layout: React.FC = ({ children }) => {
                 aki blog
               </a>
             </Link>
-            <ChangeThemeButton />
+            <ToggleDark />
           </div>
         </header>
         <main>{children}</main>
