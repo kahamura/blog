@@ -15,7 +15,7 @@ const ToggleDark: React.FC = () => {
         aria-label="DarkModeToggle"
         type="button"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="bg-slate-600 rounded-md w-8 h-8 p-1 self-center"
+        className="bg-gray-600 rounded-md w-8 h-8 p-1 self-center"
       >
         {mounted && (
           <>
