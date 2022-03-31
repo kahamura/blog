@@ -35,3 +35,17 @@ const shape = {
 shape.diameter();
 shape.perimeter();
 ```
+
+```js
+const user = {
+  name: "Heisenberg",
+  occupation: "entrepreneur",
+  sayMyName() {
+    console.log(this.name);
+  },
+};
+
+const sayMyName = user.sayMyName;
+
+sayMyName();
+```
