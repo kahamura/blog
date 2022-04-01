@@ -33,7 +33,9 @@ const Article: React.FC<Props> = ({ articleData }) => {
       <Head>
         <title>{articleData.title}</title>
       </Head>
-      <div className="text-4xl font-bold mb-3">{articleData.title}</div>
+      <div className="text-4xl dark:text-white font-bold mb-3">
+        {articleData.title}
+      </div>
       <div className="pb-10">
         <Date dateString={articleData.date} />
       </div>
