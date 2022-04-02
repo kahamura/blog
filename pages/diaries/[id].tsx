@@ -38,7 +38,7 @@ const Diary: React.FC<Props> = ({ diaryData }) => {
       <div className="text-4xl dark:text-white font-bold mb-3">
         {diaryData.title}
       </div>
-      <div className="pb-10">
+      <div className="pb-4">
         <Date dateString={diaryData.date} />
       </div>
       <div dangerouslySetInnerHTML={{ __html: diaryData.contentHtml ?? "" }} />
