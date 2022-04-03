@@ -36,10 +36,11 @@ const Article: React.FC<Props> = ({ articleData }) => {
       <div className="text-4xl dark:text-white font-bold mb-3">
         {articleData.title}
       </div>
-      <div className="pb-10">
+      <div className="pb-4">
         <Date dateString={articleData.date} />
       </div>
       <div
+        className="markdown"
         dangerouslySetInnerHTML={{ __html: articleData.contentHtml ?? "" }}
       />
     </div>
