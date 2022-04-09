@@ -51,10 +51,14 @@ async function main() {
 }
 
 function generateRssItem(article) {
+  const link =
+    article.link != null
+      ? article.link
+      : `https://blog-kahamura.vercel.app/articles/${article.id}`;
   return `<item>
   <guid>https://blog-kahamura.vercel.app/articles/${article.id}</guid>
   <title>${article.title}</title>
-  <link>https://blog-kahamura.vercel.app/articles/${article.id}</link>
+  <link>${link}</link>
   <content:encoded><![CDATA[${article.content}]]></content:encoded>
   ${
     article.date !== null
