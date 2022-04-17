@@ -42,3 +42,7 @@
 .markdown strong {
   @apply text-rose-300 font-bold;
 }
+
+.markdown img {
+  @apply rounded-lg;
+}
