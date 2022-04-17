@@ -34,10 +34,6 @@ const Diary: React.FC<Props> = ({ diaryData }) => {
         <title>{diaryData.title}</title>
         <meta property="og:title" content={diaryData.title} />
         <meta name="twitter:card" content="summary" />
-        <meta
-          property="og:image"
-          content="https://blog-kahamura.vercel.app/favicon.png"
-        ></meta>
       </Head>
       <div className="text-[30px] dark:text-white font-bold mb-3">
         {diaryData.title}

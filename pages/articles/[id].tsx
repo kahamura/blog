@@ -32,6 +32,8 @@ const Article: React.FC<Props> = ({ articleData }) => {
     <div>
       <Head>
         <title>{articleData.title}</title>
+        <meta property="og:title" content={articleData.title} />
+        <meta name="twitter:card" content="summary" />
       </Head>
       <div className="text-[30px] dark:text-white font-bold mb-3">
         {articleData.title}
