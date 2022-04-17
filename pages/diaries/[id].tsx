@@ -39,7 +39,7 @@ const Diary: React.FC<Props> = ({ diaryData }) => {
           content="https://blog-kahamura.vercel.app/favicon.png"
         ></meta>
       </Head>
-      <div className="text-4xl dark:text-white font-bold mb-3">
+      <div className="text-[30px] dark:text-white font-bold mb-3">
         {diaryData.title}
       </div>
       <div className="pb-4">

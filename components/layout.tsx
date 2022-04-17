@@ -5,7 +5,7 @@ import ToggleDark from "./toggleDark";
 const Layout: React.FC = ({ children }) => {
   return (
     <div className="dark:bg-[#222831] bg-white min-h-screen bg-auto">
-      <div className="max-w-xl mx-auto px-4 py-6 sm:py-10 prose dark:prose-invert">
+      <div className="max-w-[38rem] mx-auto px-4 py-6 sm:py-10 prose dark:prose-invert">
         <Head>
           <title>aki blog</title>
           <link rel="icon" type="image/png" href="/favicon.png" />
