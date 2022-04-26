@@ -98,6 +98,5 @@ Jesse James Garrett 氏は、記事の中で、Ajax を構成する技術とし�
 
 # 参考文献
 
-- http://www.kogures.com/hitoshi/history/javascript/index.html
-- https://typescriptbook.jp/overview/before-typescript
-- https://developer.mozilla.org/ja/docs/web/guide/ajax
+- [Javascript の歴史 - 木暮　仁](http://www.kogures.com/hitoshi/history/javascript/index.html)
+- [サバイバル TypeScript - TypeScript 誕生の背景](https://typescriptbook.jp/overview/before-typescript)
