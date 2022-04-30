@@ -20,6 +20,7 @@
 }
 
 .markdown blockquote p {
+  quotes: none;
   @apply text-gray-500 dark:text-gray-300;
 }
 
