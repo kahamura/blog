@@ -29,7 +29,7 @@
 }
 
 .markdown p code {
-  @apply text-gray-600 dark:text-gray-300 bg-gray-200  dark:bg-gray-700 rounded-sm px-[6px] py-[2px] whitespace-nowrap font-normal;
+  @apply text-gray-600 dark:text-gray-300 bg-gray-200  dark:bg-gray-700 rounded px-[6px] py-[2px] whitespace-nowrap font-normal;
 }
 
 .markdown code::before {
