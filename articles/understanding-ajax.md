@@ -10,6 +10,8 @@ tags: ["Web", "JavaScript"]
 
 Web は、1989 年にスイスのジュネーブにある CERN（欧州原子核研究機構） に所属していた **Tim Berners-Lee** 氏によって考案されました。
 
+![](https://storage.googleapis.com/zenn-user-upload/4656a2bc9481-20220502.jpeg)
+
 当時の CERN にはたくさんの研究者が在籍しており、膨大な数の論文やデータを簡単に共有できるような仕組みが必要でした。そこで、ソフトウェアの技術者として CERN に在籍していた Tim Berners-Lee 氏は、論文などの文書を相互に結びつける仕組みとして「World Wide Web」を考案し、1991 年 には世界初となる [Web サイト](http://info.cern.ch/hypertext/WWW/TheProject.html) を公開しました。
 
 1990 年代前半の Web は、HTML と CSS で記述された、いわゆる静的な Web ページがほとんどでした。しかし、静的な Web ページでは出来ることが限られていたため、次第に Web サイトを動的にしたいというニーズが高まってきました。
@@ -19,6 +21,8 @@ Web は、1989 年にスイスのジュネーブにある CERN（欧州原子核
 Java Applet は、ネットワーク経由でブラウザに読み込まれて実行される Java のアプリケーションの一種です。1996 年に Netscape Navigator 2.0 に搭載されたことで普及しましたが、Java Applet を組み込んだ Web サイトは動作が重くなりがちだったため、次第に利用されなくなりました。
 
 そして JavaScript は、Netscape Communications 社の **Brendan Eich** 氏によって開発されたプログラミング言語です。JavaScript は、1995 年に自社のブラウザである Netscape Navigator 2.0 に実装されました。
+
+![](https://storage.googleapis.com/zenn-user-upload/dbeafe46f922-20220502.jpeg)
 
 当時、Netscape Communications 社のライバルだった Microsoft 社は、シェア争いで引き離されてしまわないように、すぐに Javascript を自社のブラウザである Internet Exproler に組み込もうとしました。しかし、Netscape Communications 社 は自社の優位性を保つために、ライセンスの供与を認めませんでした。その結果、Microsoft 社は Javascript に似た「**JScript**」という言語を自社で開発し、1996 年に Internet Explorer 3.0 に組み込みました。
 
@@ -180,9 +184,39 @@ xhr.onload = () => {
 ただし 最近では、XMLHttpRequest よりも [Fetch API](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch) の方がよく利用されます。
 XMLHttpRequest を使った場合、コードが見辛くなってしまうという問題があるのですが、Fetch API を使用すればよりシンプルでモダンな書き方をすることができます。
 
+## DOM とは
+
+「DOM」とは、Document Object Model の略で、ウェブ文書のためのプログラミングインターフェイスです。
+
+> ドキュメントオブジェクトモデル (DOM) はウェブ文書のためのプログラミングインターフェイスです。ページを表現するため、プログラムが文書構造、スタイル、内容を変更することができます。 DOM は文書をノードとオブジェクトで表現します。
+>
+> 引用: [MDN - DOM の紹介](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model/Introduction)
+
+例えば、動的な Web アプリケーションを自分で作る場合、Web ページの見た目をユーザーによるクリックなどの動きによって一部変化させたいと思うことがあると思います。
+
+しかし、Web ページを記述している HTML 自体は、単なるテキストのデータです。テキストデータでは、HTML の要素を変化させることはできません。
+変化させるには、HTML の構造を扱うための API が必要です。そこで「**DOM**」と呼ばれる API が必要になります。
+
+DOM を使うと、HTML におけるタグは単なるテキストではなく、『情報を持ったオブジェクト』として扱うことができます。
+
+この『情報を持ったオブジェクト』は、JavaScript から利用できるようになっています。このオブジェクトの中身を取り出して書き換えた場合は、自動的に対応する要素の表示も変更されます。
+
+```js
+const nodes = document.getElementsByTagName("h1");
+nodes[0].style.color = "blue";
+```
+
+例えば上記のコードでは、この記事のタイトルである `h1` のオブジェクトを、JavaScript を使って取り出して文字色を青に変更しています。
+ブラウザのインスペクターで実行すると、「Ajax について理解する」というタイトルの文字が青色に変化しているはずです。
+
+このように、 DOM を使用すれば Web ページを表示させた後でも、要素を自由に変更することが可能になります。
+
+# Ajax の全体像
+
 # 参考文献
 
 - [Javascript の歴史 - 木暮　仁](http://www.kogures.com/hitoshi/history/javascript/index.html)
 - [サバイバル TypeScript - TypeScript 誕生の背景](https://typescriptbook.jp/overview/before-typescript)
 - [いまさら聞けない、“Ajax”とは何なのか？](https://atmarkit.itmedia.co.jp/ait/articles/0708/23/news134.html)
 - [MDN - サーバからのデータ取得](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+- [図解まるわかり プログラミングのしくみ](https://www.shoeisha.co.jp/book/detail/9784798163284)

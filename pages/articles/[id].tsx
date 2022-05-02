@@ -35,9 +35,9 @@ const Article: React.FC<Props> = ({ articleData }) => {
         <meta property="og:title" content={articleData.title} />
         <meta name="twitter:card" content="summary" />
       </Head>
-      <div className="text-[30px] dark:text-white font-bold mb-3">
+      <h1 className="text-3xl text-gray-700 dark:text-white">
         {articleData.title}
-      </div>
+      </h1>
       <div className="pb-4">
         <Date dateString={articleData.date} />
       </div>
