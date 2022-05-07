@@ -12,7 +12,7 @@ Ajax を理解するためには、どのような時代背景で登場したの
 
 Web は、1989 年にスイスのジュネーブにある CERN（欧州原子核研究機構） に所属していた **Tim Berners-Lee** 氏によって考案されました。
 
-![](https://storage.googleapis.com/zenn-user-upload/4656a2bc9481-20220502.jpeg)
+[![Image from Gyazo](https://i.gyazo.com/2d486b41647a1d61e5982e876c52ea8e.png)](https://gyazo.com/2d486b41647a1d61e5982e876c52ea8e)
 
 当時の CERN にはたくさんの研究者が在籍しており、膨大な数の論文やデータを簡単に共有できるような仕組みが必要でした。そこで、ソフトウェアの技術者として CERN に在籍していた Tim Berners-Lee 氏は、論文などの文書を相互に結びつける仕組みとして「World Wide Web」を考案し、さらに 1991 年 には世界初となる [Web サイト](http://info.cern.ch/hypertext/WWW/TheProject.html) を公開しました。
 
@@ -26,9 +26,9 @@ Java Applet は、ネットワーク経由でブラウザに読み込まれて�
 
 そして JavaScript は、Netscape Communications 社の **Brendan Eich** 氏によって開発されたプログラミング言語です。JavaScript は、1995 年に自社のブラウザである Netscape Navigator 2.0 に実装されました。
 
-![](https://storage.googleapis.com/zenn-user-upload/dbeafe46f922-20220502.jpeg)
+[![Image from Gyazo](https://i.gyazo.com/b42424c9e9274d20b0dfc0fa74e2e103.png)](https://gyazo.com/b42424c9e9274d20b0dfc0fa74e2e103)
 
-当時、Netscape Communications 社のライバルだった Microsoft 社は、シェア争いで引き離されてしまわないように、すぐに Javascript を自社のブラウザである Internet Exproler に組み込もうとしました。しかし、Netscape Communications 社 は自社の優位性を保つために、ライセンスの供与を認めませんでした。その結果、Microsoft 社は Javascript に似た「**JScript**」という言語を自社で開発し、1996 年に Internet Explorer 3.0 に組み込みました。
+当時、Netscape Communications 社のライバルだった Microsoft 社は、シェア争いで引き離されてしまわないように、すぐに JavaScript を自社のブラウザである Internet Exproler に組み込もうとしました。しかし、Netscape Communications 社 は自社の優位性を保つために、ライセンスの供与を認めませんでした。その結果、Microsoft 社は JavaScript に似た「**JScript**」という言語を自社で開発し、1996 年に Internet Explorer 3.0 に組み込みました。
 
 JavaScript と JScript はよく似ており、それなりに互換性もありましたが、お互いがシェア獲得のために独自に機能を開発していったため、どちらのブラウザでも動作するようなコードを書くことは困難でした。そのため JavaScript は「使い勝手が悪いプログラミング言語」というイメージが生まれてしまいました。
 
@@ -106,13 +106,13 @@ Asynchronous とは、直訳すると「非同期の」という意味で、通�
 
 同期通信では、クライアントがサーバーに対してリクエストを送ると、サーバからレスポンスが送られてくるまで、クライアントは待ち状態となります。
 
-![](https://storage.googleapis.com/zenn-user-upload/0198ec251238-20220501.png)
+[![Image from Gyazo](https://i.gyazo.com/bcc3dbdad44d3571b09da89d0770aea8.png)](https://gyazo.com/bcc3dbdad44d3571b09da89d0770aea8)
 
 待ち状態となるので、ユーザーはその間に他の UI を操作をすることはできません。サーバーとの通信が終了して Web ページが描画された後に、ようやくユーザーは操作を再開できるようになります。
 
 一方、非同期通信では、レスポンスを待ち続けるということはしません。
 
-![](https://storage.googleapis.com/zenn-user-upload/175bc7ed8584-20220501.png)
+[![Image from Gyazo](https://i.gyazo.com/15b2f9844c2e401cbc99d0ee182e21d4.png)](https://gyazo.com/15b2f9844c2e401cbc99d0ee182e21d4)
 
 クライアントは、サーバからの応答を待たずに次の処理へ進むことができます。ユーザーにとっては、通信中であっても他の UI を操作をすることができるため、同期通信と比べて快適に Web アプリケーションを利用することができます。
 
@@ -224,14 +224,14 @@ nodes[0].style.color = "blue";
 
 まず、従来の Web アプリケーションについてです。これまでは、ブラウザからサーバーに対してリクエストを送信すると、サーバーからデータが返ってくるまで、ブラウザは処理を中断して待機していなくてはなりませんでした。
 
-![](https://storage.googleapis.com/zenn-user-upload/4e7011e10887-20220505.png)
+[![Image from Gyazo](https://i.gyazo.com/f9707606963bf6380360acb6b3197a2d.png)](https://gyazo.com/f9707606963bf6380360acb6b3197a2d)
 
 この間、ユーザーはずっと待ち続けなければなりません。つまり、Web ページの操作を何もできないことになります。その上、サーバーはクライアントと通信する度に Web ページ全体の HTML を返すので、ブラウザは毎回、画面全体を描画しなおす必要があります。
 その結果、画面の読み込みに毎回時間がかかったり、画面にチラつきが発生したりなどの問題がありました。
 
 一方、Ajax を使った Web アプリケーションの場合は、サーバーとの通信は非同期で行われます。そのため、通信が終わっていなくても、ユーザーは画面の他の UI を操作することが可能になります。
 
-![](https://storage.googleapis.com/zenn-user-upload/6aafea2a735c-20220505.png)
+[![Image from Gyazo](https://i.gyazo.com/3d99172a3a8e1d5bc6f5e8ba4e2977ca.png)](https://gyazo.com/3d99172a3a8e1d5bc6f5e8ba4e2977ca)
 
 Ajax では、XMLHttpRequest オブジェクトを使って、画面上の不足しているデータだけをサーバーにリクエストします。サーバーはレスポンスとして、従来の HTML の形式ではなく、XML 形式や JSON 形式でデータを送信します。
 ブラウザは、データを取得したら DOM を使って Web ページの一部だけを更新するので、従来の方法よりも読み込みにかかる時間を減らし、画面のチラつきも最小限に抑えることができます。

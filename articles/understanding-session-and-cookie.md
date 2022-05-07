@@ -10,7 +10,7 @@ tags: ["Web"]
 
 HTTP は、ステートレスなプロトコルです。ステートレスとは「状態を持たない」という意味で、ある通信とそれ以前の通信の間では、状態を共有しないことを表します。基本的に、クライアントとサーバーの間では、以前どのようなやり取りをしたかという情報は保持されません。同じリクエストを送信した場合は、必ず同じ結果が返されるようになっています。
 
-![](https://storage.googleapis.com/zenn-user-upload/2d2731cb7476-20220416.png)
+[![Image from Gyazo](https://i.gyazo.com/50061572412ae8db2039446b39f3c31c.png)](https://gyazo.com/50061572412ae8db2039446b39f3c31c)
 
 当初の HTTP の設計では、たくさんの処理を迅速にこなすために、このようなシンプルな設計になっていました。ところが Web が発展するにつれて、ステートレスではなく、ステートフルに通信したいというニーズが次第に生まれてくるようになりました。
 
@@ -30,7 +30,7 @@ HTTP は、ステートレスなプロトコルです。ステートレスとは
 
 そして「**セッション管理**」とは、そのセッション内における通信相手であるユーザーをきちんと識別し、そのユーザーの状態を管理することを意味します。一般的に、セッション管理はサーバーとクライアントの間で「セッション ID」と呼ばれる識別番号をやり取りすることで実現します。
 
-![](https://storage.googleapis.com/zenn-user-upload/78a93601bfb5-20220416.png)
+[![Image from Gyazo](https://i.gyazo.com/98f2ebaf12df4bd6b10f12f5e024ff23.png)](https://gyazo.com/98f2ebaf12df4bd6b10f12f5e024ff23)
 
 大まかなセッション管理の流れは、次のようになります。
 
@@ -58,7 +58,7 @@ HTTP は、ステートレスなプロトコルです。ステートレスとは
 通常、サーバーはリクエストに応じて Web サイトの HTML ソースを返します。このとき、HTML ソースの中にある全てのリンクに対して、次のようにセッション ID を付けます。
 
 ```
-http://example/home?sessionid=123
+http://example/home?session-id=123
 ```
 
 そうすることで、ユーザーが Web サイト内のボタンやリンクをクリックしたときに、セッション ID が含まれたリクエストが送信されるようになります。 こうしてサーバーは、セッション ID を受け取ることができます。
@@ -80,7 +80,7 @@ http://example/home?sessionid=123
 
 ```html
 <form>
-  <input type="hidden" name="session_id" value="123" />
+  <input type="hidden" name="session-id" value="123" />
 </form>
 ```
 
@@ -98,11 +98,13 @@ http://example/home?sessionid=123
 
 Cookie は、これまで紹介した方法の中で最もプログラミングの手間が少ないこともあり、セッション ID をやり取りする際には多く用いられます。具体的には、次のような流れでやり取りをします。
 
-![](https://storage.googleapis.com/zenn-user-upload/d495605b6add-20220416.png)
+[![Image from Gyazo](https://i.gyazo.com/a2dbbac412e64e7a37586906c01ec29b.png)](https://gyazo.com/a2dbbac412e64e7a37586906c01ec29b)
 
 まず、クライアントはサーバーに対して初回リクエストを送ります。これを受けてサーバーは、セッション ID を発行して、レスポンスと共に送り返します。このとき、サーバーはレスポンスヘッダーに **_Set-Cookie_** というフィールドを含め、そこに Cookie として保存させたい情報を設定します。例えば、上記の図のように「Set-Cookie: sessionid=123;」と記述すれば、「sessionid: 123;」という情報を Cookie として保存してほしいとブラウザに示すことができます。
 
-![](https://storage.googleapis.com/zenn-user-upload/c329d642b40e-20220416.png)
+<!-- ![](https://storage.googleapis.com/zenn-user-upload/c329d642b40e-20220416.png) -->
+
+[![Image from Gyazo](https://i.gyazo.com/bc36b22da96fb43196960e12165336fd.png)](https://gyazo.com/bc36b22da96fb43196960e12165336fd)
 
 レスポンスを受け取ったブラウザは、_Set-Cookie_ ヘッダーを見て、その値を自分の PC のハードドライブ上にテキストファイルとして保存します。そしてブラウザは、再びサーバーに対してリクエストを送るときに、保存した Cookie 情報をリクエストヘッダーの **_Cookie_** フィールドに含めます。そうすると、サーバーは送られてきた Cookie からセッション ID を受け取ることができます。
 
