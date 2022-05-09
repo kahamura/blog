@@ -28,7 +28,7 @@ Java Applet は、ネットワーク経由でブラウザに読み込まれて�
 
 [![Image from Gyazo](https://i.gyazo.com/b42424c9e9274d20b0dfc0fa74e2e103.png)](https://gyazo.com/b42424c9e9274d20b0dfc0fa74e2e103)
 
-当時、Netscape Communications 社のライバルだった Microsoft 社は、シェア争いで引き離されてしまわないように、すぐに JavaScript を自社のブラウザである Internet Exproler に組み込もうとしました。しかし、Netscape Communications 社 は自社の優位性を保つために、ライセンスの供与を認めませんでした。その結果、Microsoft 社は JavaScript に似た「**JScript**」という言語を自社で開発し、1996 年に Internet Explorer 3.0 に組み込みました。
+当時、Netscape Communications 社のライバルだった Microsoft 社は、シェア争いで引き離されてしまわないように、すぐに JavaScript を自社のブラウザである Internet Exproler に組み込もうとしました。しかし、Netscape Communications 社 は自社の優位性を保つために、ライセンスの供与を認めませんでした。その結果、Microsoft 社は JavaScript に似た「**JScript**」という言語を自社で開発し、1996 年には Internet Explorer 3.0 に組み込みました。
 
 JavaScript と JScript はよく似ており、それなりに互換性もありましたが、お互いがシェア獲得のために独自に機能を開発していったため、どちらのブラウザでも動作するようなコードを書くことは困難でした。そのため JavaScript は「使い勝手が悪いプログラミング言語」というイメージが生まれてしまいました。
 
@@ -36,7 +36,7 @@ JavaScript と JScript はよく似ており、それなりに互換性もあり
 
 1990 年代後半からは、インターネットの普及に伴い、個人で Web サイトを制作する人が増加しました。当時の人々は、かっこいい Web サイトを作成するために、無駄にカーソルの軌跡を星でキラキラさせたり、文字の大きさを変化させたりなどのテクニックのために JavaScript を利用しました。その結果、センスが悪くゴテゴテしたページが多く誕生し、JavaScript は素人が使うプログラミング言語のイメージが染みついてしまいました。
 
-また、当時は JavaScript はセキュリティ的に危ない という意見が多く、ブラウザの設定で JavaScript を OFF にしてネットサーフィンをするのが、IT リテラシーが高い人という印象がありました。そのため、サイトによっては『当サイトを閲覧するには JavaScript を ON にしてください』といった注意書きもしばしば見られました。
+また、当時は JavaScript はセキュリティ的に危ない という意見が多く、ブラウザの設定で JavaScript を OFF にしてネットサーフィンをするのが、IT リテラシーが高い人という印象がありました。そのため、サイトによっては『当サイトを閲覧するには JavaScript を ON にしてください』といった注意書きもしばしば見かけられました。
 
 ## JavaScript の復権
 
@@ -44,7 +44,7 @@ JavaScript と JScript はよく似ており、それなりに互換性もあり
 
 そして 2000 年代中盤で、JavaScript は再び注目を集めるようになりました。そのきっかけになったのが、2005 年に Jesse James Garrett 氏によって発表された「[Ajax: A New Approach to Web Applications](https://web.archive.org/web/20051124064232/http://www.adaptivepath.com/publications/essays/archives/000385.php)」という記事です。Jesse James Garrett 氏は、この記事の中で、当時 Google Maps や Google Suggest で使用されていた技術を分析し、その技術をまとめて「**Ajax**」と名付けました。
 
-では、「Ajax」とは具体的にどういう技術なのでしょうか。次の章からは、Ajax の定義などについて詳しく見ていきたいと思います。
+では、「Ajax」とは具体的にどのような技術なのでしょうか。次の章からは、Ajax の定義などについて詳しく見ていきたいと思います。
 
 # Ajax の定義
 
@@ -68,13 +68,13 @@ Jesse James Garrett 氏は、記事の中で、Ajax を構成する技術とし�
 
 これらの技術は、当時新しく登場した技術というわけではなく、いずれも記事が出る前から存在する技術でした。Jesse James Garrett 氏は、これらの既存技術を組み合わせた新しい方法として「Ajax」という言葉を造り出したのです。そのため、世間では Ajax は「新しくて古い技術」と呼ばれたりもします。
 
-ところで、彼はなぜ Ajax という言葉を造り出したのでしょうか。その答えは、[記事](https://web.archive.org/web/20051124064232/http://www.adaptivepath.com/publications/essays/archives/000385.php)の最後にある Q&A のセクションの中にあります。次の引用の通り、彼は顧客と話すときに毎回 "Asynchronous JavaScript + CSS + DOM + XMLHttpRequest" と長々と言うのが面倒だったようです。
+ところで、彼はなぜ Ajax という言葉を生み出したのでしょうか。その答えは、[記事](https://web.archive.org/web/20051124064232/http://www.adaptivepath.com/publications/essays/archives/000385.php)の最後にある Q&A のセクションの中にあります。次の引用の通り、彼は会社の顧客と話すときに毎回 "Asynchronous JavaScript + CSS + DOM + XMLHttpRequest" と長々と言うのが面倒だったようです。
 
 > Q. Why did you feel the need to give this a name?
 >
 > A. I needed something shorter than “Asynchronous JavaScript+CSS+DOM+XMLHttpRequest” to use when discussing this approach with clients.
 
-また、アメリカでは元々「[AJAX](<https://en.wikipedia.org/wiki/Ajax_(cleaning_product)>)」という食器用洗剤が販売されており、恐らくそこからもじったものではないかと考えられています。
+また、アメリカでは元々「[AJAX](<https://en.wikipedia.org/wiki/Ajax_(cleaning_product)>)」という食器用洗剤が販売されており、そこからもじったものではないかと考えられています。
 
 > Ajax も“非同期の JavaScript と XML”などともっともらしい名称の頭文字を取ったように見えるが、真相は「あの洗剤のブランド名でピッタリいける！」ということで、名付けられたのだろう。
 >
@@ -118,7 +118,7 @@ Asynchronous とは、直訳すると「非同期の」という意味で、通�
 
 ## XML とは
 
-では次は、Ajax の文字「X」の部分である XML の意味について確認していきたいと思います。
+では次は、Ajax の文字「x」の部分である XML の意味について確認していきたいと思います。
 
 XML とは、「Extensible Markup Language」の略で、文書やデータの意味や構造を記述するためのマークアップ言語の 1 つです。
 
@@ -163,7 +163,7 @@ Ajax では、クライアントとサーバー間で、データを受け渡し
 > 引用: [MDN - XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
 
 本来、サーバーと通信するときは、別のページに遷移したりページを再読み込みしたりする必要があります。
-しかし、Ajax を利用することで同じページを表示させたまま、HTTP 通信を何度も行うことが可能になりました。XMLHttpRequest は、このような通信を行うために利用される JavaScript のオブジェクトです。
+しかし、Ajax を利用することで同じページを表示させたまま、HTTP 通信を何度も行うことが可能になります。XMLHttpRequest は、このような通信を行うために利用される JavaScript のオブジェクトです。
 
 XMLHttpRequest を使用すると、必要に応じていつでもサーバーに対してリクエストを送り、XML や JSON 形式のデータを読み込むことができます。
 
@@ -211,7 +211,7 @@ const nodes = document.getElementsByTagName("h1");
 nodes[0].style.color = "blue";
 ```
 
-例えば上記のコードでは、この記事のタイトルである `h1` のオブジェクトを、JavaScript を使って取り出して文字色を青に変更しています。
+例えば上記のコードを実行すると、この記事のタイトルである `h1` のオブジェクトを、JavaScript を使って取り出して文字色を青に変更することができます。
 ブラウザのインスペクターで実行すると、『Ajax について理解する』というタイトルの文字が青色に変化しているはずです。
 
 このように、 DOM を使用すれば Web ページを表示させた後でも、要素を自由に変更することが可能になります。
@@ -222,12 +222,12 @@ nodes[0].style.color = "blue";
 
 では、これらの技術は Ajax でどのように利用されているのでしょうか。Ajax の全体像を理解するため、この章では従来の Web アプリケーションと Ajax を利用した Web アプリケーションを比較しつつ見ていきたいと思います。
 
-まず、従来の Web アプリケーションについてです。これまでは、ブラウザからサーバーに対してリクエストを送信すると、サーバーからデータが返ってくるまで、ブラウザは処理を中断して待機していなくてはなりませんでした。
+まず、従来の Web アプリケーションについてです。これまでは、ブラウザからサーバーに対してリクエストを送信すると、サーバーからデータが返ってくるまで、ブラウザは処理を中断して待機していなければなりませんでした。
 
 [![Image from Gyazo](https://i.gyazo.com/f9707606963bf6380360acb6b3197a2d.png)](https://gyazo.com/f9707606963bf6380360acb6b3197a2d)
 
-この間、ユーザーはずっと待ち続けなければなりません。つまり、Web ページの操作を何もできないことになります。その上、サーバーはクライアントと通信する度に Web ページ全体の HTML を返すので、ブラウザは毎回、画面全体を描画しなおす必要があります。
-その結果、画面の読み込みに毎回時間がかかったり、画面にチラつきが発生したりなどの問題がありました。
+この間、ユーザーはずっと待ち続けなければなりません。つまり、Web ページの操作を何もできないことになります。その上、サーバーはクライアントと通信する度に Web ページ全体の HTML を返すので、ブラウザは毎回の通信で画面全体を描画しなおす必要があります。
+その結果、画面を読み込む度に時間がかかる・画面にチラつきが発生するなどの問題がありました。
 
 一方、Ajax を使った Web アプリケーションの場合は、サーバーとの通信は非同期で行われます。そのため、通信が終わっていなくても、ユーザーは画面の他の UI を操作することが可能になります。
 
@@ -237,12 +237,14 @@ Ajax では、XMLHttpRequest オブジェクトを使って、画面上の不足
 ブラウザは、データを取得したら DOM を使って Web ページの一部だけを更新するので、従来の方法よりも読み込みにかかる時間を減らし、画面のチラつきも最小限に抑えることができます。
 
 例えば、Google Maps では、地図をドラッグすることで自由に見る場所を移動することができます。
-これは、ユーザーの操作に合わせて足りないデータを取得し、動的に Web ページを書き換えるという Ajax の技術を用いて実現しているのです。
+これは、ユーザーの操作に合わせて足りないデータを取得し、動的に Web ページを書き換えるという Ajax の技術を用いて実現しているからです。
 
 # 参考文献
 
 - [Javascript の歴史 - 木暮　仁](http://www.kogures.com/hitoshi/history/javascript/index.html)
 - [サバイバル TypeScript - TypeScript 誕生の背景](https://typescriptbook.jp/overview/before-typescript)
-- [いまさら聞けない、“Ajax”とは何なのか？](https://atmarkit.itmedia.co.jp/ait/articles/0708/23/news134.html)
+- [いまさら聞けない、“Ajax”とは何なのか？ - ITmedia](https://atmarkit.itmedia.co.jp/ait/articles/0708/23/news134.html)
+- [いまさら聞けない JavaScript 入門 - ITmedia](https://atmarkit.itmedia.co.jp/ait/articles/0707/17/news114.html)
 - [MDN - サーバからのデータ取得](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
 - [図解まるわかり プログラミングのしくみ](https://www.shoeisha.co.jp/book/detail/9784798163284)
+- [第一部 XML 文書の作り方 - ITmedia](https://atmarkit.itmedia.co.jp/ait/articles/0105/08/news002.html)
