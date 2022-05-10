@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 .markdown h1 {
-  @apply text-[1.6em] text-gray-700 dark:text-white mt-14 pb-[0.2em] border-b-2 border-gray-200 dark:border-gray-600;
+  @apply text-2xl text-gray-700 dark:text-white mt-14 pb-1 border-b-2 border-gray-200 dark:border-gray-600;
 }
 
 .markdown h2 {
-  @apply text-[1.4em] text-gray-700 dark:text-white;
+  @apply text-xl text-gray-700 dark:text-white;
 }
 
 .markdown p {
-  @apply text-[16px] leading-[1.9] text-gray-700 dark:text-white;
+  @apply text-base leading-[1.9] text-gray-700 dark:text-white;
 }
 
 .markdown blockquote {

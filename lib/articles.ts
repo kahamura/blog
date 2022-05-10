@@ -18,6 +18,7 @@ type Data = {
   date: string;
   tags?: string[];
   link?: string;
+  image?: string;
 };
 
 const articlesDirectory = path.join(process.cwd(), "articles");
