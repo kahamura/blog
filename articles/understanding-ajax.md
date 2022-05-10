@@ -1,7 +1,8 @@
 ---
 title: "Ajaxについて理解する"
-date: "2022-04-24"
+date: "2022-05-10"
 tags: ["Web", "JavaScript"]
+image: "https://i.gyazo.com/1bf021fc6a41e62cdf6364a95a1072a2.jpg"
 ---
 
 # Ajax の登場背景

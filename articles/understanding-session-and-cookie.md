@@ -2,6 +2,7 @@
 title: "セッションとクッキーについて理解する"
 date: "2022-04-17"
 tags: ["Web"]
+image: "https://i.gyazo.com/5219804bbbe3973de47b442c04a0f7e4.jpg"
 ---
 
 # セッション
