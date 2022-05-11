@@ -33,7 +33,7 @@ const Article: React.FC<Props> = ({ articleData }) => {
       <Head>
         <title>{articleData.title}</title>
         <meta property="og:title" content={articleData.title} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta property="og:image" content={articleData.image} />
       </Head>
       <h1 className="text-3xl text-gray-700 dark:text-white">
