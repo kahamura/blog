@@ -13,7 +13,7 @@ image: "https://i.gyazo.com/60cfb89054f448fcc6da2fcfea2abac1.jpg"
 >
 > [MDN - Cross-site scripting](https://developer.mozilla.org/ja/docs/Glossary/Cross-site_scripting)
 
-例えば、ショッピングサイトで、商品を検索したらその検索結果の一覧を表示するような Web ページがあったとします。
+例えば、ショッピングサイトで、商品を検索したらその検索結果の一覧を表示するような Web ページがあるとします。
 
 [![Image from Gyazo](https://i.gyazo.com/261438cb9abed953cf8ff4e38606bf0d.png)](https://gyazo.com/261438cb9abed953cf8ff4e38606bf0d)
 
@@ -24,11 +24,10 @@ image: "https://i.gyazo.com/60cfb89054f448fcc6da2fcfea2abac1.jpg"
 
 [![Image from Gyazo](https://i.gyazo.com/ef07b11215dc2a7aabe958e36c193317.png)](https://gyazo.com/ef07b11215dc2a7aabe958e36c193317)
 
-例えば、「Cat」の代わりに「 `<h1>Cat</h1>` 」と検索された場合を考えてみます。
+例えば、「Cat」の代わりに「 `<h1>Cat</h1>` 」という文字が入力された場合、ブラウザは `<` や`>` という文字を「HTML のタグ」として認識します。
+そのため、ユーザーの検索結果の画面には「Cat」という文字列が `h1` の要素として表示されることになります。
 
-サーバー側は、リクエストを受け取ったら「 `<h1>Cat</h1>` 」という文字列をそのまま HTML の中に含めてレスポンスを返します。レスポンスを受け取ったブラウザは、HTML を読み込む際に、 `<` や `>` などの文字を「HTML のタグ」として認識します。そのため、結果としてユーザーの画面には Cat という文字列が `h1` の要素として表示されるようになります。
-
-このような、入力値が HTML タグとして認識される Web サイトは、XSS の脆弱性がある恐れがあります。
+このような、入力値が HTML タグとして認識される Web サイトは、XSS の危険性があります。
 
 では、XSS とは具体的にどのような攻撃手法なのでしょうか。
 
