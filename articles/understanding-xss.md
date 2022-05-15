@@ -13,12 +13,12 @@ image: "https://i.gyazo.com/60cfb89054f448fcc6da2fcfea2abac1.jpg"
 >
 > [MDN - Cross-site scripting](https://developer.mozilla.org/ja/docs/Glossary/Cross-site_scripting)
 
-例えば、ショッピングサイトで、商品を検索したらその検索結果の一覧を表示するような Web ページがあったとします。
+例えば、あるショッピングサイトで、商品を検索したらその検索結果の一覧を表示するような Web ページがあったとします。
 
 [![Image from Gyazo](https://i.gyazo.com/261438cb9abed953cf8ff4e38606bf0d.png)](https://gyazo.com/261438cb9abed953cf8ff4e38606bf0d)
 
 ユーザーが「Cat」と検索した場合は、「http://example.jp/search?item=Cat」という URL でリクエストが送信されます。
-サーバー側は、URL の item パラメータで指定された「Cat」という文字列を取得して、次のように HTML の一部にそのまま含めてレスポンスを返します。
+サーバー側は、URL の item パラメータで指定された「Cat」という文字列を取得して、次のように HTML の一部に含めてレスポンスを返したとします。
 
 ```html
 <div>
@@ -27,22 +27,24 @@ image: "https://i.gyazo.com/60cfb89054f448fcc6da2fcfea2abac1.jpg"
 </div>
 ```
 
-このとき、「Cat」の代わりに「 `<h1>Cat</h1>` 」と入力して検索するユーザーがいたら、どうなるでしょうか。
+このとき、「Cat」の代わりに「 `<s>Cat</s>` 」と入力するユーザーがいたら、どうなるでしょうか。
 
 [![Image from Gyazo](https://i.gyazo.com/ef07b11215dc2a7aabe958e36c193317.png)](https://gyazo.com/ef07b11215dc2a7aabe958e36c193317)
 
-サーバ側は、生成する HTML に、入力された文字列「 `<h1>Cat</h1>` 」を埋め込んで、レスポンスとして返します。
+サーバ側は HTML を生成する際に「 `<s>Cat</s>` 」という文字列を埋め込んで、レスポンスを渡します。
 
 ```html
 <div>
   検索結果：
-  <span><h1>Cat</h1></span>
+  <span><s>Cat</s></span>
 </div>
 ```
 
-ブラウザは、HTML を読み取るときに「 `<h1>Cat</h1>` 」の中にある `<` や`>` という文字を「HTML のタグ」として解釈することになるため、結果としてユーザーの画面には「Cat」という文字列が `h1` の要素で表示されることになります。
+ブラウザは、この HTML を読み込むときに、埋め込まれた文字列を `s` の要素として解釈します。そのため、結果的にユーザーの画面には「Cat」という文字列に取り消し線が引かれた状態で表示されることになります。
 
-このような Web サイトは、XSS の脆弱性がある恐れがあります。
+この例では、`<s>〜<s>` がほとんど無害なタグであるため、問題は無いように感じるかもしれません。しかし、`<script>〜</script>` を使って悪意のあるスクリプトが埋め込まれた場合、セッションハイジャックや秘密情報が盗まれるなどに被害が発生する可能性があります。
+
+このように、ユーザーが入力した文字列を使って動的に HTML を生成しているような Web サイトは XSS の危険性があると言えます。
 
 # XSS の種類
 
