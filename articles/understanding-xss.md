@@ -13,12 +13,12 @@ image: "https://i.gyazo.com/60cfb89054f448fcc6da2fcfea2abac1.jpg"
 >
 > [MDN - Cross-site scripting](https://developer.mozilla.org/ja/docs/Glossary/Cross-site_scripting)
 
+[![Image from Gyazo](https://i.gyazo.com/0e60470021d849a14500686c34bc3686.png)](https://gyazo.com/0e60470021d849a14500686c34bc3686)
+
 例えば、あるショッピングサイトで、商品を検索したらその検索結果の一覧を表示するような Web ページがあったとします。
 
-[![Image from Gyazo](https://i.gyazo.com/261438cb9abed953cf8ff4e38606bf0d.png)](https://gyazo.com/261438cb9abed953cf8ff4e38606bf0d)
-
 ユーザーが「Cat」と検索した場合は、「http://example.jp/search?item=Cat」という URL でリクエストが送信されます。
-サーバー側は、検索結果の HTML を生成するときに URL の item パラメータで指定された文字列「Cat」を取得して、次のように HTML 内に埋め込みます。
+サーバー側は、検索結果の HTML を生成するときに、URL の item パラメータで指定された文字列「Cat」を取得して、次のように HTML 内に埋め込みました。
 
 ```html
 <div>
@@ -27,6 +27,15 @@ image: "https://i.gyazo.com/60cfb89054f448fcc6da2fcfea2abac1.jpg"
 </div>
 ```
 
-このとき、埋め込んだ文字列が適切にエスケープされていなかった場合，どうなるでしょうか。
+このとき、埋め込んだ文字列が適切にエスケープされていなかったら，どうなるでしょうか？
 
-[![Image from Gyazo](https://i.gyazo.com/ef07b11215dc2a7aabe958e36c193317.png)](https://gyazo.com/ef07b11215dc2a7aabe958e36c193317)
+例えば、「 `<script>alert("XSS")</script>` 」と検索された場合、生成される HTML の一部は次のようなものになります。
+
+```html
+<div>
+  検索結果：
+  <span><h1>Cat</h1></span>
+</div>
+```
+
+ブラウザがこの HTML を読む込むとき、
